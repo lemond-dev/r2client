@@ -122,25 +122,23 @@ impl R2Client {
         let mut objects = Vec::new();
 
         // Add folders (common prefixes)
-        if let Some(prefixes) = response.common_prefixes() {
-            for prefix in prefixes {
-                if let Some(p) = prefix.prefix() {
-                    let name = p
-                        .trim_end_matches('/')
-                        .rsplit('/')
-                        .next()
-                        .unwrap_or(p)
-                        .to_string();
+        for prefix in response.common_prefixes() {
+            if let Some(p) = prefix.prefix() {
+                let name = p
+                    .trim_end_matches('/')
+                    .rsplit('/')
+                    .next()
+                    .unwrap_or(p)
+                    .to_string();
 
-                    objects.push(ObjectInfo {
-                        key: p.to_string(),
-                        name,
-                        size: 0,
-                        last_modified: String::new(),
-                        is_folder: true,
-                        etag: None,
-                    });
-                }
+                objects.push(ObjectInfo {
+                    key: p.to_string(),
+                    name,
+                    size: 0,
+                    last_modified: String::new(),
+                    is_folder: true,
+                    etag: None,
+                });
             }
         }
 
