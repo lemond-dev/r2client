@@ -1,0 +1,48 @@
+[package]
+name = "r2-explorer"
+version = "0.1.0"
+description = "A Cloudflare R2 Desktop Client"
+authors = ["R2 Explorer Team"]
+edition = "2021"
+
+[lib]
+name = "r2_explorer_lib"
+crate-type = ["lib", "cdylib", "staticlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = ["protocol-asset"] }
+tauri-plugin-dialog = "2"
+tauri-plugin-fs = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tokio = { version = "1", features = ["full"] }
+
+# AWS S3 SDK (R2 兼容)
+aws-sdk-s3 = "1"
+aws-config = { version = "1", features = ["behavior-version-latest"] }
+aws-credential-types = "1"
+
+# 安全存储
+keyring = "3"
+
+# 配置目录
+dirs = "5"
+
+# 错误处理
+thiserror = "1"
+anyhow = "1"
+
+# 日期时间
+chrono = { version = "0.4", features = ["serde"] }
+
+# UUID
+uuid = { version = "1", features = ["v4"] }
+
+[profile.release]
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
