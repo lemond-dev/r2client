@@ -25,6 +25,9 @@ aws-sdk-s3 = "1"
 aws-config = { version = "1", features = ["behavior-version-latest"] }
 aws-credential-types = "1"
 
+# Windows TLS 证书支持
+rustls-native-certs = "0.8"
+
 # 配置目录
 dirs = "5"
 
@@ -44,5 +47,4 @@ uuid = { version = "1", features = ["v4"] }
 [profile.release]
 lto = true
 codegen-units = 1
-panic = "abort"
 strip = true
