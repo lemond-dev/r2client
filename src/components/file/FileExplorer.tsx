@@ -13,11 +13,10 @@ import { DropZone } from "./DropZone";
 import { FilePreview } from "./FilePreview";
 import { FileGridSkeleton, FileListSkeleton } from "@/components/ui/Skeleton";
 import { FolderOpen } from "lucide-react";
-import * as api from "@/lib/tauri";
 
 export function FileExplorer() {
   const { selectedAccountId, selectedBucket, currentPath, navigateToFolder } = useBucketStore();
-  const { files, viewMode, isLoading, selectedFiles, selectAll, clearSelection, setFiles } = useFileStore();
+  const { files, viewMode, isLoading, selectedFiles, selectAll, clearSelection } = useFileStore();
   const { loadFiles, deleteFiles, getDownloadUrl } = useR2();
   const { downloadFile } = useTransfer();
   const { toast } = useToast();

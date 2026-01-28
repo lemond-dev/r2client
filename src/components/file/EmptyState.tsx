@@ -1,4 +1,4 @@
-import { Upload, FolderOpen, FileUp } from "lucide-react";
+import { Upload, FileUp } from "lucide-react";
 import { useTransfer } from "@/hooks/useTransfer";
 import { cn } from "@/lib/utils";
 

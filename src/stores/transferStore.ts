@@ -31,7 +31,7 @@ interface TransferState {
   cancelTransfer: (id: string) => void;
 }
 
-export const useTransferStore = create<TransferState>((set, get) => ({
+export const useTransferStore = create<TransferState>((set) => ({
   transfers: [],
   activeTransfers: 0,
   maxConcurrent: 3,

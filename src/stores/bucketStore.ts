@@ -37,7 +37,7 @@ interface BucketState {
 
 export const useBucketStore = create<BucketState>()(
   persist(
-    (set, get) => ({
+    (set) => ({
       accounts: [],
       buckets: [],
       selectedAccountId: null,

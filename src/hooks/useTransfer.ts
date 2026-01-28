@@ -7,7 +7,7 @@ import { useToast } from "./useToast";
 
 export function useTransfer() {
   const { selectedAccountId, selectedBucket, currentPath } = useBucketStore();
-  const { addTransfer, updateStatus, updateProgress } = useTransferStore();
+  const { addTransfer, updateStatus } = useTransferStore();
   const { toast } = useToast();
 
   // Upload files

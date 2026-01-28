@@ -25,7 +25,6 @@ export function FilePreview({
 
   const ext = getFileExtension(fileName).toLowerCase();
   const isImage = ["jpg", "jpeg", "png", "gif", "webp", "svg", "bmp"].includes(ext);
-  const isText = ["txt", "md", "json", "js", "ts", "jsx", "tsx", "css", "html", "xml", "yaml", "yml", "toml", "ini", "log"].includes(ext);
   const isPdf = ext === "pdf";
 
   useEffect(() => {

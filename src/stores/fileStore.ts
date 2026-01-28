@@ -36,7 +36,7 @@ interface FileState {
   setLoading: (loading: boolean) => void;
 }
 
-export const useFileStore = create<FileState>((set, get) => ({
+export const useFileStore = create<FileState>((set) => ({
   files: [],
   selectedFiles: new Set(),
   viewMode: "grid",

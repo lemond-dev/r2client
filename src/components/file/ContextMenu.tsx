@@ -6,8 +6,6 @@ import {
   Link,
   Eye,
   FolderOpen,
-  Copy,
-  FileEdit,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 

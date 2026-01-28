@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { useTransferStore, type TransferItem } from "@/stores/transferStore";
-import { cn, formatBytes } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 
 export function TransferQueue() {
   const [isExpanded, setIsExpanded] = useState(true);

@@ -1,6 +1,6 @@
 import { useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Upload, FileUp } from "lucide-react";
+import { FileUp } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface DropZoneProps {
@@ -11,7 +11,7 @@ interface DropZoneProps {
 
 export function DropZone({ children, onDrop, disabled }: DropZoneProps) {
   const [isDragging, setIsDragging] = useState(false);
-  const [dragCounter, setDragCounter] = useState(0);
+  const [, setDragCounter] = useState(0);
 
   const handleDragEnter = useCallback(
     (e: React.DragEvent) => {
